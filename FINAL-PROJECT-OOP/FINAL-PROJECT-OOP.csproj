@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="package.cs" />
     <Compile Include="CustomException.cs" />
     <Compile Include="CustomQueue.cs" />
     <Compile Include="Entity.cs" />
