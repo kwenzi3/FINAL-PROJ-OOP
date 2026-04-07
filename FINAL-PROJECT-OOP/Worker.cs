@@ -13,17 +13,14 @@ namespace FINAL_PROJECT_OOP
         private int taskCompleted;
         private bool isAvailable;
 
-        private static int doCounter = 01;
-        private int workerId;
-
         public Worker() : base()
         {
             experienceYars = 0;
             taskCompleted = 0;
             isAvailable = true;
         }
-        public Worker(int wi, string n, int ey, int tc, bool ia)
-            : base(n)
+        public Worker(string n, int id, int ey, int tc, bool ia)
+            : base(n, id)
         {
             if (ey < 0)
                 throw new InvalidDataException("Experience years cannot be negative.");
@@ -32,8 +29,6 @@ namespace FINAL_PROJECT_OOP
             experienceYars = ey;
             taskCompleted = tc;
             isAvailable = ia;
-            workerId = wi;
-            workerId = doCounter++;
         }
 
         public int getExperienceYears() { return experienceYars; } 
@@ -75,8 +70,9 @@ namespace FINAL_PROJECT_OOP
 
         public override void Display()
         {
-            Console.WriteLine("WORKER |"  + "W" + workerId); 
+           
             Console.WriteLine("Name: " + getName());
+            Console.WriteLine("W" + getId());
             Console.WriteLine("Experience Years: " + experienceYars);
             Console.WriteLine("Task Completed: " + taskCompleted);
             Console.WriteLine("Is Available: " + isAvailable);

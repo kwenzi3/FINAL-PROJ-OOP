@@ -16,7 +16,7 @@ namespace FINAL_PROJECT_OOP
                 teamSize = 0;
         }
 
-        public Manager(int wi, string n,int ey, int tc, bool ia, int ts) : base(wi, n, ey, tc, ia)
+        public Manager(string n,int id, int ey, int tc, bool ia, int ts) : base( n, id, ey, tc, ia)
         {
             if (ts < 0)
                 throw new InvalidDataException("Team size cannot be negative.");

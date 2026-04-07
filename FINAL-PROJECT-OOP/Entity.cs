@@ -19,7 +19,7 @@ namespace FINAL_PROJECT_OOP
             createDate = DateTime.Now;
         }
 
-        public Entity(string n)
+        public Entity(string n, int id)
         {
             if (id == 0)    
                 throw new InvalidDataException("ID cannot be 0");
@@ -28,12 +28,13 @@ namespace FINAL_PROJECT_OOP
 
            
             name = n;
+            this.id = id;   
             createDate = DateTime.Now;
         }
 
-       
-        //idk if i should include this (ask teacher)
-        //public int getId() { return id; }
+
+
+        public int getId() { return id; }
         public string getName() { return name; }
 
         public void setName(string n)
@@ -42,12 +43,12 @@ namespace FINAL_PROJECT_OOP
                 throw new InvalidDataException("Name cannot be null or empty.");
             name = n;
         }
-        //public void setId(int id)
-        //{
-        //    if (id == 0)
-        //        throw new InvalidDataException("ID cannot be 0");
-        //    this.id = id;
-        //}
+        public void setId(int id)
+        {
+            if (id == 0)
+                throw new InvalidDataException("ID cannot be 0");
+            this.id = id;
+        }
 
         public DateTime getCreateDate() { return createDate; }
 
