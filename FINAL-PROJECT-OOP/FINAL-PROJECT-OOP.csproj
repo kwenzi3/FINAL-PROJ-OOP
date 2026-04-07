@@ -48,6 +48,7 @@
     <Compile Include="CustomQueue.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="Loader.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
