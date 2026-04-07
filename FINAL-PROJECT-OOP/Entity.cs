@@ -19,17 +19,20 @@ namespace FINAL_PROJECT_OOP
             createDate = DateTime.Now;
         }
 
-        public Entity(int id, string n)
+        public Entity(string n, int id)
         {
             if (id == 0)    
                 throw new InvalidDataException("ID cannot be 0");
             if(string.IsNullOrEmpty(n))
                 throw new InvalidDataException("Name cannot be null or empty.");
-            
-            this.id = id;
+
+           
             name = n;
+            this.id = id;   
             createDate = DateTime.Now;
         }
+
+
 
         public int getId() { return id; }
         public string getName() { return name; }
