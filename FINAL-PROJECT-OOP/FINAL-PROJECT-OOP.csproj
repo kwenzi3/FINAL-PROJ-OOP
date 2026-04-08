@@ -48,6 +48,8 @@
     <Compile Include="CustomQueue.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="IQuequeable.cs" />
+    <Compile Include="ISortable.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Program.cs" />
