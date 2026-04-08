@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    internal class Class1
+    internal class van
     {
     }
 }

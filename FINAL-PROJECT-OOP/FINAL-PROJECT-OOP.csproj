@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="drone.cs" />
+    <Compile Include="van.cs" />
+    <Compile Include="truck.cs" />
     <Compile Include="package.cs" />
     <Compile Include="CustomException.cs" />
     <Compile Include="CustomQueue.cs" />

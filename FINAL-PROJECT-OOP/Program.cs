@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +11,229 @@ namespace FINAL_PROJECT_OOP
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1. Add a Vehicle!");
-            Console.WriteLine("1. Add a Worker!");
-            Console.WriteLine("1. Add a Package!");
-            Console.WriteLine("2. Assign Delivery/Deliveries");
-            Console.WriteLine("3. Sort");
-            Console.WriteLine("4. Search");
-            Console.WriteLine("5. Run stimulation");
-            Console.WriteLine("6. Undo");
-            Console.WriteLine("7. Save or Load");
+            Console.WriteLine("*****BLYTH SMART LOGISTICS AND DELIVERY SYSTEM*****");
 
-            Console.WriteLine("What is your option?");
-            int choice =int.Parse(Console.ReadLine());
+            bool running = true;
+
+            while (running)
+            {
+
+                Console.WriteLine("*****ENTITIES MENU*****");
+                Console.WriteLine();
+                Console.WriteLine("1. Add Entities(vehicle/worker)!");
+                Console.WriteLine("2. Assign Delivery/Deliveries");
+                Console.WriteLine("3. Sort");
+                Console.WriteLine("4. Search");
+                Console.WriteLine("5. Run stimulation");
+                Console.WriteLine("6. Undo");
+                Console.WriteLine("7. Save or Load");
+                Console.WriteLine("or Exit");
+
+                Console.WriteLine("What is your choice? : ");
+                int choice = int.Parse(Console.ReadLine());
+
+
+
+                //displaymenu();
+                //string choice = Console.ReadLine();
+
+                switch (choice)
+
+                {
+                    case 1:
+                        EntitiesMenu();
+                        break;
+
+                    case 2:
+                        AssignDeliveries();
+                        break;
+
+                    case 3:
+                        SortPackages();
+                        break;
+
+                    case 4:
+                        SearchPackages();
+                        break;
+
+                    case 5:
+                        RunStimulation();
+                        break;
+
+                    case 6:
+                        Undo();
+                        break;
+
+                    case 7:
+                        Save();
+                        break;
+
+                    case 8:
+                        Load();
+                        break;
+
+                    default:
+                        Console.WriteLine("Please enter your choice! :");
+                        break;
+
+                }
+
+            }
         }
+        //static void displaymenu()
+        //{
+           
+
+        //}
+
+
+
+        static void EntitiesMenu()
+        {
+            Console.WriteLine("*****What would you like to add?*****");
+            Console.WriteLine("1. Truck");
+            Console.WriteLine("2. Van");
+            Console.WriteLine("3. Drone");
+            Console.WriteLine("4. Driver");
+            Console.WriteLine("5. Manager");
+            Console.WriteLine("6. Loader");
+
+            Console.WriteLine("What is your choice? : ");
+            int choice = int.Parse(Console.ReadLine());
+            //string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case 1:
+                    AddTruck();
+                    break;
+
+                case 2:
+                    AddVan();
+                    break;
+
+                case 3:
+                    AddDrone();
+                    break;
+
+                case 4:
+                    AddDriver();
+                    break;
+
+                case 5:
+                    AddManager();
+                    break;
+
+                case 6:
+                    AddLoader();
+                    break;
+
+                default:
+                    Console.WriteLine("Please enter your choice! :");
+                    break;
+
+            }
+
+
+        }
+
+         public static void AddTruck()
+
+        {
+            Console.WriteLine("Enter the truck's name : ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Enter the truck's fuel consumption : ");
+            double fuelconsump = double.Parse(Console.ReadLine());
+
+            truck t = new truck(name, fuelconsump);
+
+            Console.WriteLine("Truck has been added!!");
+
+        }
+
+        public static void AddVan()
+
+        {
+            Console.WriteLine("Enter the van's name : ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Is this van electric? : ");
+            bool isElectric = Console.ReadLine().ToLower() == "yes";
+
+            van v = new van(name, isElectric);
+
+            Console.WriteLine("Van has been added!!");
+
+        }
+
+        public static void AddDrone()
+
+        {
+
+            Console.WriteLine("Enter the drone's name : ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("What is the maximum distance? : ");
+            double maxdistance = double.Parse(Console.ReadLine());
+
+            drone d = new drone(name, maxdistance);
+
+            Console.WriteLine("Drone has been added!!");
+        }
+
+
+
+        public static void AddDriver()
+
+        {
+            Console.WriteLine(" Enter the driver's name : ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("What is the liscence type? : ");
+            string liscensetype = Console.ReadLine();
+
+            driver d = new driver(name, liscensetype);
+
+            Console.WriteLine("Driver has been added!!");
+
+        }
+
+
+
+        public static void AddManager();
+
+        {
+            Console.WriteLine("Enter the Manager's name : ");
+            string name = Console.ReadLine();
+
+
+        Console.WriteLine("What is the team size? : ");
+            int teamsize = Console.ReadLine();
+
+        manager m = new manager(name, teamsize);
+
+        Console.WriteLine("Manager has been added!!");
+
+        }
+
+public static void AddLoader()
+
+        {
+            Console.WriteLine("Enter the Loader's name : ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("What is the Maximum Liftable weight? : ");
+            double maxliftweight = Console.ReadLine();
+
+            loader l = new loader(name, maxliftweight);
+
+            Console.WriteLine("Loader has been added!!");
+
+
+        }
+
     }
 }
+
+
