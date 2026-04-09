@@ -8,5 +8,13 @@ namespace FINAL_PROJECT_OOP
 {
     internal class van
     {
+        private string name;
+        private bool isElectric;
+
+        public van(string name, bool isElectric)
+        {
+            this.name = name;
+            this.isElectric = isElectric;
+        }
     }
 }

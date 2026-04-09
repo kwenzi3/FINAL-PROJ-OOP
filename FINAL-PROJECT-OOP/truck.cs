@@ -8,5 +8,13 @@ namespace FINAL_PROJECT_OOP
 {
     internal class truck
     {
+        private string name;
+        private double fuelconsump;
+
+        public truck(string name, double fuelconsump)
+        {
+            this.name = name;
+            this.fuelconsump = fuelconsump;
+        }
     }
 }

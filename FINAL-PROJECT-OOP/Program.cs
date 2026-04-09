@@ -82,7 +82,7 @@ namespace FINAL_PROJECT_OOP
         }
         //static void displaymenu()
         //{
-           
+
 
         //}
 
@@ -137,7 +137,7 @@ namespace FINAL_PROJECT_OOP
 
         }
 
-         public static void AddTruck()
+        public static void AddTruck()
 
         {
             Console.WriteLine("Enter the truck's name : ");
@@ -193,7 +193,7 @@ namespace FINAL_PROJECT_OOP
             Console.WriteLine("What is the liscence type? : ");
             string liscensetype = Console.ReadLine();
 
-            driver d = new driver(name, liscensetype);
+            Driver d = new Driver(name, liscensetype);
 
             Console.WriteLine("Driver has been added!!");
 
@@ -211,11 +211,14 @@ namespace FINAL_PROJECT_OOP
         Console.WriteLine("What is the team size? : ");
             int teamsize = Console.ReadLine();
 
-        manager m = new manager(name, teamsize);
+        Manager m = new Manager(name, teamsize);
 
         Console.WriteLine("Manager has been added!!");
 
         }
+
+
+
 
 public static void AddLoader()
 
@@ -224,9 +227,10 @@ public static void AddLoader()
             string name = Console.ReadLine();
 
             Console.WriteLine("What is the Maximum Liftable weight? : ");
-            double maxliftweight = Console.ReadLine();
+            double maxliftweight=double.Parse(Console.ReadLine());
 
-            loader l = new loader(name, maxliftweight);
+
+            Loader l = new Loader (name, maxliftweight);
 
             Console.WriteLine("Loader has been added!!");
 

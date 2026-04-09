@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Vehicle.cs" />
     <Compile Include="drone.cs" />
     <Compile Include="van.cs" />
     <Compile Include="truck.cs" />
