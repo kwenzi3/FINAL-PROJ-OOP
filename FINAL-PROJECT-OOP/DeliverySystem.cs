@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    internal class package
+    internal class DeliverySystem
     {
-
-
     }
 }

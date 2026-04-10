@@ -22,6 +22,54 @@ namespace FINAL_PROJECT_OOP
             isAvailable = true;
         }
 
+        public Vehicle(string n, int id, double spd, double mc, double cl, bool ia)
+        : base(n, id)
+
+        {
+            if (spd < 0)
+                throw new InvalidDataException("The speed can't be below 0!");
+            if (mc < 0)
+                throw new InvalidDataException("The maximum load can't be below 0!");
+            if (cl < 0)
+                throw new InvalidDataException("The current load can't be below 0!");
+
+            speed = spd;
+            maxCapacity = mc;
+            currentLoad = cl;
+            isAvailable = ia;
+        }
+
+        public double getSpeed() { return speed; }
+        public double getMaxCapacity() { return maxCapacity; }
+        public double getCurrentLoad() { return currentLoad; }
+        public bool getisAvailable() { return isAvailable; }
+
+        public void  setSpeed(double spd)
+        {
+            if (spd < 0)
+                throw new InvalidDataException("The speed can't be below 0!");
+            speed = spd;
+        }
+
+        public void setMaxCapacity(double mc)
+        {
+            if (mc < 0)
+                throw new InvalidDataException("The Maximum Capacity can't be below 0!");
+            maxCapacity = mc;
+        }
+
+        public void setCurrentLoad (double cl)
+        {
+            if (cl < 0)
+                throw new InvalidDataException("The current load can't be below 0!");
+            currentLoad = cl;
+        }
+
+        public void setisAvailable (bool ia)
+        {
+            isAvailable = ia;
+        }
+
 
         public void SetCapacity(double capacity)
         {
@@ -29,6 +77,27 @@ namespace FINAL_PROJECT_OOP
                 throw new InvalidDataException("capacity must be >0");
         }
 
+        public double getRemainingCapacity()
+        {
+            return maxCapacity - currentLoad;
+        }
+
+        public virtual double CalculateEfficency()
+        {
+            return 0;
+        }
+
+        //public abstract void AssignDeliveries(List<package> packages);
+
+        public override void Display()
+        {
+            Console.WriteLine("Name of the vehicle : " + getName());
+            Console.WriteLine("Vehicle" + getId());
+            Console.WriteLine("Speed of the vehicle is : " + getSpeed());
+            Console.WriteLine("The maximum capacity is : " + getMaxCapacity());
+            Console.WriteLine("The current load is : " + getCurrentLoad());
+            Console.WriteLine("Is is available? : " + getisAvailable());
+        }
 
     }
 }
