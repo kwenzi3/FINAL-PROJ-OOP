@@ -6,15 +6,31 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    internal class van
+    public class van
     {
-        private string name;
         private bool isElectric;
 
-        public van(string name, bool isElectric)
+
+
+
+        public van() : base()
         {
-            this.name = name;
-            this.isElectric = isElectric;
+            isElectric = true;
         }
+
+        public van (string n, int id, double spd, double mc, double cl, bool ia, bool ie)
+            : base (n,id, spd, mc, cl, ia)
+        {
+            isElectric = ie;
+        }
+
+
+
+        //public van(string name, bool isElectric)
+        //{
+        //    this.name = name;
+        //    this.isElectric = isElectric;
+        //}
+
     }
 }

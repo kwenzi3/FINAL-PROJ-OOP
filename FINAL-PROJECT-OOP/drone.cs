@@ -11,10 +11,16 @@ namespace FINAL_PROJECT_OOP
         private string name;
         private double maxdistance;
 
-        public drone(string name, double maxdistance)
-        {
-            this.name = name;
-            this.maxdistance = maxdistance;
-        }
+        //public drone(string name, double maxdistance)
+        //{
+        //    this.name = name;
+        //    this.maxdistance = maxdistance;
+        //}
+
+
     }
 }
+
+
+
+

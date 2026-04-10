@@ -9,6 +9,8 @@ namespace FINAL_PROJECT_OOP
 {
     internal class Program
     {
+        static DeliverySystem SLDS = new DeliverySystem();
+
         static void Main(string[] args)
         {
             Console.WriteLine("*****BLYTH SMART LOGISTICS AND DELIVERY SYSTEM*****");
@@ -80,6 +82,8 @@ namespace FINAL_PROJECT_OOP
 
             }
         }
+
+
         //static void displaymenu()
         //{
 
@@ -147,7 +151,7 @@ namespace FINAL_PROJECT_OOP
             double fuelconsump = double.Parse(Console.ReadLine());
 
             truck t = new truck(name, fuelconsump);
-
+           
             Console.WriteLine("Truck has been added!!");
 
         }
@@ -237,7 +241,42 @@ public static void AddLoader()
 
         }
 
+
+
+        static void AssignDeliveries()
+        {
+            Console.WriteLine("Assigning Deliveries to : " + Worker + "and" + Vehicle );
+            
+            
+        }
+
+        static void Sort()
+        {
+
+        }
+
+        static void search()
+        {
+
+        }
+
+        static void runStimulation()
+        {
+
+        }
+
+        static void undo()
+        {
+            SLDS.undo();
+        }
+
+        static void SaveAndLoad()
+        {
+
+        }
     }
+
+ 
 }
 
 

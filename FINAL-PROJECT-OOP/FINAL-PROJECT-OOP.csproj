@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeliverySystem.cs" />
+    <Compile Include="warehouse.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="drone.cs" />
     <Compile Include="van.cs" />
