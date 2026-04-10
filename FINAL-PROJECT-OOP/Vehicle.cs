@@ -39,17 +39,17 @@ namespace FINAL_PROJECT_OOP
             isAvailable = ia;
         }
 
+        //getters setters
         public double getSpeed() { return speed; }
-        public double getMaxCapacity() { return maxCapacity; }
-        public double getCurrentLoad() { return currentLoad; }
-        public bool getisAvailable() { return isAvailable; }
 
-        public void  setSpeed(double spd)
+        public void setSpeed(double spd)
         {
             if (spd < 0)
                 throw new InvalidDataException("The speed can't be below 0!");
             speed = spd;
         }
+
+        public double getMaxCapacity() { return maxCapacity; }
 
         public void setMaxCapacity(double mc)
         {
@@ -58,18 +58,23 @@ namespace FINAL_PROJECT_OOP
             maxCapacity = mc;
         }
 
-        public void setCurrentLoad (double cl)
+        public double getCurrentLoad() { return currentLoad; }
+
+        public void setCurrentLoad(double cl)
         {
             if (cl < 0)
                 throw new InvalidDataException("The current load can't be below 0!");
             currentLoad = cl;
         }
+        public bool getisAvailable() { return isAvailable; }
 
-        public void setisAvailable (bool ia)
+        public void setisAvailable(bool ia)
         {
             isAvailable = ia;
         }
 
+
+        //methods
 
         public void SetCapacity(double capacity)
         {

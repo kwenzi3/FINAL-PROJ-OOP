@@ -20,13 +20,31 @@ namespace FINAL_PROJECT_OOP
         public truck (string n, int id, double spd, double mc, double cl, bool ia, double fc)
             : base (n, id, spd, mc, cl, ia)
         {
-            if (fuelconsump > 0)
+            if (fuelconsump < 0)
                 throw new InvalidDataException("The fuel consumption should not be below 0!");
 
             fuelconsump = fc;
 
 
         }
+
+
+       
+
+        public double Getfuelconsump()
+        {
+            return fuelconsump;
+        }
+
+        public void Setfuelconsump(  double fc)
+        {
+            if (fc < 0)
+                throw new InvalidDataException("The fuel consumotion should not be below 0!");
+
+            fuelconsump = fc;
+        }
+
+
 
         //public override assigndeliveries - not sure about this
 
