@@ -31,8 +31,8 @@ namespace FINAL_PROJECT_OOP
 
             name = n;
             workers = new List<Worker>();
-            private List<Vehicle> vehicles;
-            private List<Package> packages;
+            vehicles = new List<Vehicle>();
+            packages = new List<Package>(); ;
 
         }
 
@@ -82,23 +82,21 @@ namespace FINAL_PROJECT_OOP
             }
         }
 
-        public FindBestVehicle(Vehicle vehicles)
+        public Vehicle FindBestVehicle(List<Vehicle> vehicles)
         {
             if (vehicles == null || vehicles.Count == 0)
                 throw new InvalidDataException("Vehicle list cannot be null or empty");
 
             Vehicle bestVehicle = vehicles[0];
-            double bestCapacity = 0.0;
-            double bestCalculatedCapacity = 0.0;
+            double bestresult = bestVehicle.getMaxCapacity() + bestVehicle.Calculatedeffiency();
 
             foreach (var vehicle in vehicles)
             {
-                double capacity = vehicle.getMaxCapacity();
-                double calculatedCapacity = vehicle.Calculatedeffiency();
-                if (capacity > bestCapacity && calculatedCapacity > bestCalculatedCapacity)
+                double result = vehicle.getMaxCapacity() + vehicle.Calculatedeffiency();
+     
+                if (result > bestresult)
                 {
-                    bestCapacity = capacity;
-                    bestCalculatedCapacity = calculatedCapacity;
+                    bestresult = result;
                     bestVehicle = vehicle;
 
                 }
@@ -108,11 +106,13 @@ namespace FINAL_PROJECT_OOP
             if (bestVehicle != null)
             {
                 Console.WriteLine("Best Vehicle found: " + bestVehicle.getName());
+               
             }
             else
             {
                 Console.WriteLine("No suitable vehicle found for the package.");
             }
+            return bestVehicle;
         }
 
         public Worker AssignWorker(List<Worker> workers)
@@ -130,6 +130,25 @@ namespace FINAL_PROJECT_OOP
 
             return null;
         }
+
+        public List<Package> getPendingPackages()
+        {
+            List<Package> getPendingPackages = new List<Package>();
+
+            foreach(vasr in packages)
+            {
+                if packahe.GetStatus() == "Pending")
+                {
+                    getPendingPackages.Add(package);
+                }
+            }
+            return getPendingPackages;
+        }
+        
+
+
+
+
 
 
                
