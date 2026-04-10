@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    public class van
+    public class van : Vehicle
     {
         private bool isElectric;
 
@@ -24,6 +24,17 @@ namespace FINAL_PROJECT_OOP
             isElectric = ie;
         }
 
+        public bool GetisElectric()
+        {
+            return isElectric;
+        }
+
+        public void SetisElectric(bool ie)
+        {
+            isElectric = ie;
+        }
+
+        //public override assigndeliveries
 
 
         //public van(string name, bool isElectric)

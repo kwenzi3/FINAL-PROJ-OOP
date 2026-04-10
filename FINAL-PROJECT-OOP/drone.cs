@@ -6,10 +6,48 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    internal class drone
+    public class drone : Vehicle
     {
-        private string name;
         private double maxdistance;
+        
+
+        public drone()
+        {
+            maxdistance = 0;
+        }
+
+        public drone (string n, int id, double spd, double mc, double cl, bool ia, double md)
+            : base (n , id, spd, mc, cl, ia)
+        {
+            if (md < 0)
+                throw new InvalidDataException("The maximum distance should not be below 0!");
+
+            maxdistance = md;
+        }
+
+
+        public double Getmaxdistance()
+        {
+            return maxdistance;
+        }
+
+        public void   Setmaxdistance(double md)
+        {
+
+            if (md < 0)
+                throw new InvalidDataException("the maximum distance should not be below 0!");
+
+            maxdistance = md;
+        }
+
+        //public override assigndeliveries with the lists - yet to do
+
+        public override double CalculateEfficency()
+        {
+            return base.CalculateEfficency();
+        }
+
+
 
         //public drone(string name, double maxdistance)
         //{
