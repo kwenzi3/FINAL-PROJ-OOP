@@ -206,7 +206,6 @@ namespace FINAL_PROJECT_OOP
 
 
         public static void AddManager();
-
         {
             Console.WriteLine("Enter the Manager's name : ");
             string name = Console.ReadLine();
@@ -224,8 +223,7 @@ namespace FINAL_PROJECT_OOP
 
 
 
-public static void AddLoader()
-
+        public static void AddLoader()
         {
             Console.WriteLine("Enter the Loader's name : ");
             string name = Console.ReadLine();
@@ -234,7 +232,7 @@ public static void AddLoader()
             double maxliftweight=double.Parse(Console.ReadLine());
 
 
-            Loader l = new Loader (name, maxliftweight);
+            Loader l = new Loader(name, maxliftweight);
 
             Console.WriteLine("Loader has been added!!");
 

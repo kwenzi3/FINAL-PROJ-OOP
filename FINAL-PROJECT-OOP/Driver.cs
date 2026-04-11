@@ -25,7 +25,7 @@ namespace FINAL_PROJECT_OOP
         }  
         
         public string GetLicenseType() { return licenseType; }
-        public void GetLicense(string lt)
+        public void SetLicense(string lt)
         {
             if (string.IsNullOrEmpty(lt))
                 throw new EmptyStructureException("License type cannot be null or empty.");

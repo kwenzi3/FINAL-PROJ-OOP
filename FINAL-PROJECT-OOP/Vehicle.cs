@@ -74,10 +74,8 @@ namespace FINAL_PROJECT_OOP
         }
 
 
-
-
-
         //methods
+
         public void SetCapacity(double capacity)
         {
             if (capacity == 0)
