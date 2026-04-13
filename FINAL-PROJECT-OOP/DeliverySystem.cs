@@ -30,33 +30,52 @@ namespace FINAL_PROJECT_OOP
             allPackages = new List<Package>(p);
         }
 
-
-
-
-
-
-
-
-        //   allPackages = new List<Package>();
-        //}
-
         public List<Warehouse> GetWarehouses()
         {
             return warehouses;
         }
 
-
-
-
-        public List<Package> GetallPackages()
+        public void SetWarehouses(List<Warehouse> warehouses)
         {
-
+            warehouses = warehouses.ToList();
         }
 
-        public List<Package> GetallPackages()
 
+
+        public List<Package> GetallPackages()
         {
             return allPackages;
+        }
+
+        public void SetallPackages(List<Package> allPackages)
+        {
+            allPackages = allPackages.ToList();
+        }
+
+        public void AddWarehouse(Warehouse w)
+        {
+            if (w == null)
+                throw new InvalidDataException("The warhouse can'y be null");
+
+            warehouses.Add(w);
+        }
+
+        public void AddPackage(Package p)
+        {
+            if (p == null)
+                throw new InvalidDataException("The package can't be null or empty");
+
+            allPackages.Add(p);
+        }
+
+        public Package SearchPackageById(int id)
+        {
+            foreach (Package p in allPackages)
+            {
+                if (p.getId() == id) 
+                    return p;
+            }
+            return null;
         }
 
 
