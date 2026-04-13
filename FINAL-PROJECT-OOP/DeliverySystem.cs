@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    internal class DeliverySystem
+    public class DeliverySystem
     {
         private List<Warehouse> warehouses;
+
         private List<Package> allPackages;
+
+
 
         public DeliverySystem()
         {
             warehouses = new List<Warehouse>();
+
             allPackages = new List<Package>();
         }
 
@@ -33,5 +37,21 @@ namespace FINAL_PROJECT_OOP
 
 
 
+            allPackages = new List<package>();
+        }
+
+        public List<Warehouse> GetWarehouses()
+        {
+            return warehouses;
+        }
+
+        public List<package> GetallPackages()
+        {
+            return allPackages;
+        }
+
+
+
     }
 }
+

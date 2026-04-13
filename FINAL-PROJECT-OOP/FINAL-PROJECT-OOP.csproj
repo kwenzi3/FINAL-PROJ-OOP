@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F4F978F6-2407-44D7-9C4B-41784AD8B4F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FINAL_PROJECT_OOP</RootNamespace>
-    <AssemblyName>FINAL-PROJECT-OOP</AssemblyName>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,23 +44,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeliverySystem.cs" />
-    <Compile Include="warehouse.cs" />
-    <Compile Include="Vehicle.cs" />
-    <Compile Include="drone.cs" />
-    <Compile Include="van.cs" />
-    <Compile Include="truck.cs" />
-    <Compile Include="package.cs" />
     <Compile Include="CustomException.cs" />
     <Compile Include="CustomQueue.cs" />
+    <Compile Include="CustomStack.cs" />
+    <Compile Include="DeliverySystem.cs" />
     <Compile Include="Driver.cs" />
+    <Compile Include="drone.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="IFilehandler.cs" />
     <Compile Include="IQuequeable.cs" />
     <Compile Include="ISortable.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="package.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="truck.cs" />
+    <Compile Include="van.cs" />
+    <Compile Include="Vehicle.cs" />
     <Compile Include="Warehouse.cs" />
     <Compile Include="Worker.cs" />
   </ItemGroup>

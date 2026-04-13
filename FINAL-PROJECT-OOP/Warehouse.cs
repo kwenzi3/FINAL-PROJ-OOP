@@ -12,19 +12,20 @@ namespace FINAL_PROJECT_OOP
         private string name;
         private List<Worker> workers;   
         private List<Vehicle> vehicles;
-        private List<Package> packages;
+        private List<package> packages;
 
         public Warehouse()
         {
             name = string.Empty;
             workers = new List<Worker>();
             vehicles = new List<Vehicle>();
-            packages = new List<Package>();
+            packages = new List<package>();
         }
 
         public Warehouse(string n, List<Worker> w, List<Vehicle> v, List<Package> p)
         {
-            if (n == null || w == null || v == null || p == null)
+
+            if (string.IsNullOrEmpty(n) || w == null || v == null || p == null)
             {
                 throw new EmptyStructureException("Warehouse attribute cannot be null or empty.");
             }
@@ -34,6 +35,14 @@ namespace FINAL_PROJECT_OOP
                 vehicles = new List<Vehicle>(v);
                 packages = new List<Package>(p);
                 
+
+            if (string.IsNullOrEmpty(n))
+                throw new InvalidDataException("Warehouse name cannot be null or empty.");
+            name = n;
+            workers = new List<Worker>();
+            vehicles = new List<Vehicle>();
+            packages = new List<Package>();
+
         }
 
         public string GetName() { return name; }
@@ -61,7 +70,7 @@ namespace FINAL_PROJECT_OOP
 
         public void RemovePackage(int pacckageId)
         {
-            Package packageToRemove = null;
+            package packageToRemove = null;
 
             foreach (var package in packages)
             {
