@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace FINAL_PROJECT_OOP
 {
 
-    public class Package
+
+    public  class Package
+
     {
 
         private int id;
@@ -122,7 +124,7 @@ namespace FINAL_PROJECT_OOP
 
         public bool IsHeavy() // edit this
         {
-
+               
         }
     }
 }

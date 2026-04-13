@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    internal class Program
+    class Program
     {
-        static DeliverySystem SLDS = new DeliverySystem();
-
+        
         static void Main(string[] args)
         {
+            DeliverySystem deliverySystem = new DeliverySystem();
+
             Console.WriteLine("*****BLYTH SMART LOGISTICS AND DELIVERY SYSTEM*****");
 
             bool running = true;
@@ -52,7 +53,7 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 3:
-                        Sort();
+                        deliverySystem.SortPackacgesByStatus();
                         break;
 
                     case 4:
@@ -68,12 +69,14 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 7:
-                        SaveAndLoad();
-                        break;
+
+                     SaveAndLoad();
+                     break;
 
                     //case 8:
                     //    Load();
                     //    break;
+
 
                     default:
                         Console.WriteLine("Please enter your choice! :");
@@ -228,8 +231,13 @@ namespace FINAL_PROJECT_OOP
             string name = Console.ReadLine();
 
 
+
+            Console.WriteLine("What is the team size? : ");
+            int teamsize = Console.ReadLine();
+
         Console.WriteLine("What is the team size? : ");
             int teamsize = int.Parse(Console.ReadLine());
+
 
         Manager m = new Manager(name, teamsize);
 
