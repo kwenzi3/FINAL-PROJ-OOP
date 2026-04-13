@@ -10,10 +10,11 @@ namespace FINAL_PROJECT_OOP
 {
     class Program
     {
-        static DeliverySystem SLDS = new DeliverySystem();
-
+        
         static void Main(string[] args)
         {
+            DeliverySystem deliverySystem = new DeliverySystem();
+
             Console.WriteLine("*****BLYTH SMART LOGISTICS AND DELIVERY SYSTEM*****");
 
             bool running = true;
@@ -52,7 +53,7 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 3:
-                        Sort();
+                        deliverySystem.SortPackacgesByStatus();
                         break;
 
                     case 4:
@@ -68,8 +69,6 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 7:
-
-            
 
                      SaveAndLoad();
                      break;
