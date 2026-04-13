@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace FINAL_PROJECT_OOP
 {
 
-    internal class Package
+    public class Package
     {
 
         private int id;
@@ -100,14 +100,18 @@ namespace FINAL_PROJECT_OOP
             status = S; 
         }
 
-        public double CalculateotyScoreouble ()
+        public double CalculatePriorityScore ()
         {
             return; //create formula
         }
 
         public void UpdateStatus (string newStatus) //edit this
         {
+
+            if (***) 
+
             if (newStatus != "pending" && newStatus != "assigned" && newStatus != "delivery")
+
                 throw new InvalidDataException("The status can only be --> (pending/assigned/delivery)");
 
 

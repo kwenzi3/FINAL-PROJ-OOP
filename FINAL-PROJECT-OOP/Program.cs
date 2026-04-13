@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Services;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,28 +52,28 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 3:
-                        SortPackages();
+                        Sort();
                         break;
 
                     case 4:
-                        SearchPackages();
+                        search();
                         break;
 
                     case 5:
-                        RunStimulation();
+                        runStimulation();
                         break;
 
                     case 6:
-                        Undo();
+                        undo();
                         break;
 
                     case 7:
-                        Save();
+                        SaveAndLoad();
                         break;
 
-                    case 8:
-                        Load();
-                        break;
+                    //case 8:
+                    //    Load();
+                    //    break;
 
                     default:
                         Console.WriteLine("Please enter your choice! :");
@@ -147,11 +148,27 @@ namespace FINAL_PROJECT_OOP
             Console.WriteLine("Enter the truck's name : ");
             string name = Console.ReadLine();
 
+            Console.WriteLine("Enter the trucks's id : ");
+            int id = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the truck's speed : ");
+            double speed = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the truck's max capacity : ");
+            double mc = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("What's the truck's current load : ");
+            double cl = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Is the truck electric?? : ");
+            bool ie = true;
+
             Console.WriteLine("Enter the truck's fuel consumption : ");
             double fuelconsump = double.Parse(Console.ReadLine());
 
-            truck t = new truck(name, fuelconsump);
            
+            truck t = new truck(name, fuelconsump);
+
             Console.WriteLine("Truck has been added!!");
 
         }
@@ -205,14 +222,14 @@ namespace FINAL_PROJECT_OOP
 
 
 
-        public static void AddManager();
+        public static void AddManager()
         {
             Console.WriteLine("Enter the Manager's name : ");
             string name = Console.ReadLine();
 
 
         Console.WriteLine("What is the team size? : ");
-            int teamsize = Console.ReadLine();
+            int teamsize = int.Parse(Console.ReadLine());
 
         Manager m = new Manager(name, teamsize);
 
@@ -265,12 +282,12 @@ namespace FINAL_PROJECT_OOP
 
         static void undo()
         {
-            SLDS.undo();
+            
         }
 
         static void SaveAndLoad()
         {
-
+            
         }
     }
 

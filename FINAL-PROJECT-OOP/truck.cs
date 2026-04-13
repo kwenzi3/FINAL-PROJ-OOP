@@ -50,9 +50,9 @@ namespace FINAL_PROJECT_OOP
 
 
 
-        public override double CalculateEfficency()
+        public override double CalculatedEfficiency()
         {
-            return base.CalculateEfficency();
+            return base.CalculatedEfficiency();
         }
 
 
