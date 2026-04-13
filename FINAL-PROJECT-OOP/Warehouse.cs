@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
@@ -11,31 +12,44 @@ namespace FINAL_PROJECT_OOP
         private string name;
         private List<Worker> workers;   
         private List<Vehicle> vehicles;
-        private List<package> packages;
+        private List<Package> packages;
 
         public Warehouse()
         {
             name = string.Empty;
             workers = new List<Worker>();
             vehicles = new List<Vehicle>();
-            packages = new List<package>();
+            packages = new List<Package>();
         }
 
-        public Warehouse(string n)
+        public Warehouse(string n, List<Worker> w, List<Vehicle> v, List<Package> p)
         {
+
+            if (string.IsNullOrEmpty(n) || w == null || v == null || p == null)
+            {
+                throw new EmptyStructureException("Warehouse attribute cannot be null or empty.");
+            }
+
+                name = n;
+                workers = new List<Worker>(w);
+                vehicles = new List<Vehicle>(v);
+                packages = new List<Package>(p);
+                
+
             if (string.IsNullOrEmpty(n))
                 throw new InvalidDataException("Warehouse name cannot be null or empty.");
             name = n;
             workers = new List<Worker>();
             vehicles = new List<Vehicle>();
-            packages = new List<package>();
+            packages = new List<Package>();
+
         }
 
         public string GetName() { return name; }
         public List<Worker> GetWorkers() { return workers; }
         public List <Vehicle> GetVehicles() { return vehicles; }
         
-        public List<package> GetPackages() { return packages; }
+        public List<Package> GetPackages() { return packages; }
 
         public void SetName(string n)
         {
@@ -45,22 +59,22 @@ namespace FINAL_PROJECT_OOP
         }
         public void SetWorkers(List<Worker> w) { workers = w; }
         public void SetVehicles(List<Vehicle> v) { vehicles = v; }
-        public void SetPackages(List<package> p) { packages = p; }
+        public void SetPackages(List<Package> p) { packages = p; }
 
-        public void AddPackage(package package)
+        public void AddPackage(Package package)
         {
             if(package == null)
                 throw new IndexOutOfRangeException("Package cannot be null.");
             packages.Add(package);
         }
 
-        public void RemovePackage(int pacckageId)
+        public void RemovePackage(int packageId)
         {
-            package packageToRemove = null;
+            Package packageToRemove = null;
 
             foreach (var package in packages)
             {
-                if (package.GetId() == pacckageId)
+                if (package.getId() == packageId)
                 {
                     packageToRemove = package;
                     break;
@@ -82,10 +96,11 @@ namespace FINAL_PROJECT_OOP
             if (vehicles == null || vehicles.Count == 0)
                 throw new InvalidDataException("Vehicle list cannot be null or empty.");
             Vehicle bestVehicle = null;
-            double bestResult = bestResult.getMaxCapacity() + bestResult.CalculatedEfficiency();
+            double bestResult = double.MinValue;
+
             foreach (var vehicle in vehicles)
             {
-                double result = vehicle.getMaxCapacity() / vehicle.CalculatedEfficiency();
+                double result = vehicle.getMaxCapacity() / vehicle.CalculateEfficency();
                 if (result > bestResult)
                 {
                     bestResult = result;
@@ -118,13 +133,13 @@ namespace FINAL_PROJECT_OOP
             return null;
 
         }
-        public List<package> getPendingPackages()
+        public List<Package> getPendingPackages()
         {
             
-            List<package> pendingPackages = new List<package>();
+            List<Package> pendingPackages = new List<Package>();
             foreach (var package in packages)
             {
-                if (package.GetStatus() == "Pending")
+                if (package.getStatus() == "Pending")
                 { 
                 
                     pendingPackages.Add(package);

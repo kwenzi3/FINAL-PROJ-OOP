@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    public class package
+
+    internal class Package
     {
 
         private int id;
@@ -16,7 +17,7 @@ namespace FINAL_PROJECT_OOP
         private string destination;
         private string status;
 
-        public package()
+        public Package()
         {
             id=0; 
             weight=0;
@@ -25,13 +26,9 @@ namespace FINAL_PROJECT_OOP
             status = "***";
 
         }
-        //this part needs to be edited
-        //public package(int id, double weight, int priorityLevel)
-        //{
+    
 
-        //}
-
-        public package(int id, double w, int pl, string d, string s)
+        public Package(int id, double w, int pl, string d, string s)
         {
             if (w < 0)
                 throw new InvalidDataException("The wight should not be below 0!");
@@ -42,7 +39,7 @@ namespace FINAL_PROJECT_OOP
             if (string.IsNullOrEmpty(d))
                 throw new InvalidDataException("The destination can't be null or empty!");
 
-            id = id;
+            this.id = id;
             weight = w;
             priorityLevel = pl;
             destination = d;
@@ -58,7 +55,7 @@ namespace FINAL_PROJECT_OOP
         {
             if (id == 0)
                 throw new InvalidDataException("The id should be valid");
-            id = id;
+            this.id = id;
         }
 
         public double getWeight() 
@@ -103,15 +100,21 @@ namespace FINAL_PROJECT_OOP
             status = S; 
         }
 
-        public double CalculatePriorityScore()
+        public double CalculateotyScoreouble ()
         {
             return; //create formula
         }
 
         public void UpdateStatus (string newStatus) //edit this
         {
+<<<<<<< HEAD
             if (***) 
+=======
+            if (newStatus != "pending" && newStatus != "assigned" && newStatus != "delivery")
+>>>>>>> 090160bdaffcdd02516b4c793796cacc905b3486
                 throw new InvalidDataException("The status can only be --> (pending/assigned/delivery)");
+
+
 
             status = newStatus;
         }
