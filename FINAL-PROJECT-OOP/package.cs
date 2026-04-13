@@ -105,12 +105,12 @@ namespace FINAL_PROJECT_OOP
 
         public double CalculatePriorityScore()
         {
-            return //create formula
+            return; //create formula
         }
 
         public void UpdateStatus (string newStatus) //edit this
         {
-            if (***)
+            if (***) 
                 throw new InvalidDataException("The status can only be --> (pending/assigned/delivery)");
 
             status = newStatus;

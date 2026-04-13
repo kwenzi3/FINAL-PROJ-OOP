@@ -282,12 +282,12 @@ namespace FINAL_PROJECT_OOP
 
         static void undo()
         {
-            SLDS.undo();
+            
         }
 
         static void SaveAndLoad()
         {
-
+            
         }
     }
 

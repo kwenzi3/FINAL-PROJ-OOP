@@ -87,7 +87,7 @@ namespace FINAL_PROJECT_OOP
             return maxCapacity - currentLoad;
         }
 
-        public virtual double CalculateEfficency()
+        public virtual double CalculatedEfficiency()
         {
             return 0;
         }
