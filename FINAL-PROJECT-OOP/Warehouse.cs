@@ -100,7 +100,7 @@ namespace FINAL_PROJECT_OOP
 
             foreach (var vehicle in vehicles)
             {
-                double result = vehicle.getMaxCapacity() / vehicle.CalculateEfficency();
+                double result = vehicle.getMaxCapacity() / vehicle.CalculatedEfficiency();
                 if (result > bestResult)
                 {
                     bestResult = result;

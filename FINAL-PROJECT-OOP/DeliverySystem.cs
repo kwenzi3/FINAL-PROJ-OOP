@@ -45,13 +45,16 @@ namespace FINAL_PROJECT_OOP
             return warehouses;
         }
 
-<<<<<<< HEAD
 
 
-        public List<package> GetallPackages()
-=======
+
         public List<Package> GetallPackages()
->>>>>>> 090160bdaffcdd02516b4c793796cacc905b3486
+        {
+
+        }
+
+        public List<Package> GetallPackages()
+
         {
             return allPackages;
         }
