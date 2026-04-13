@@ -29,6 +29,18 @@ namespace FINAL_PROJECT_OOP
             warehouses = new List<Warehouse>(w);
             allPackages = new List<Package>(p);
         }
+        public void SortPackacges()
+        {
+            
+        }
+        public void ProcecessDeliveries()
+        {
+
+        }
+        public void SimulateDay()
+        {
+
+        }   
 
 
 

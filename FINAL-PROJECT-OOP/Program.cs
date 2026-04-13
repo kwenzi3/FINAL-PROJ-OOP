@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    internal class Program
+    class Program
     {
         static DeliverySystem SLDS = new DeliverySystem();
 
@@ -51,27 +51,27 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 3:
-                        SortPackages();
+                        Sort();
                         break;
 
                     case 4:
-                        SearchPackages();
+                        search();
                         break;
 
                     case 5:
-                        RunStimulation();
+                        runStimulation();
                         break;
 
                     case 6:
-                        Undo();
+                        undo();
                         break;
 
                     case 7:
-                        Save();
+                        save();
                         break;
 
                     case 8:
-                        Load();
+                        ad();
                         break;
 
                     default:
@@ -205,13 +205,13 @@ namespace FINAL_PROJECT_OOP
 
 
 
-        public static void AddManager();
+        public static void AddManager()
         {
             Console.WriteLine("Enter the Manager's name : ");
             string name = Console.ReadLine();
 
 
-        Console.WriteLine("What is the team size? : ");
+            Console.WriteLine("What is the team size? : ");
             int teamsize = Console.ReadLine();
 
         Manager m = new Manager(name, teamsize);
