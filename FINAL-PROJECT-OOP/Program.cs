@@ -170,7 +170,7 @@ namespace FINAL_PROJECT_OOP
             double fuelconsump = double.Parse(Console.ReadLine());
 
            
-            truck t = new truck(name, fuelconsump);
+            Truck t = new Truck(name, fuelconsump);
 
             Console.WriteLine("Truck has been added!!");
 
@@ -185,7 +185,7 @@ namespace FINAL_PROJECT_OOP
             Console.WriteLine("Is this van electric? : ");
             bool isElectric = Console.ReadLine().ToLower() == "yes";
 
-            van v = new van(name, isElectric);
+            Van v = new Van(name, isElectric);
 
             Console.WriteLine("Van has been added!!");
 
@@ -201,7 +201,7 @@ namespace FINAL_PROJECT_OOP
             Console.WriteLine("What is the maximum distance? : ");
             double maxdistance = double.Parse(Console.ReadLine());
 
-            drone d = new drone(name, maxdistance);
+            Drone d = new Drone(name, maxdistance);
 
             Console.WriteLine("Drone has been added!!");
         }
@@ -268,9 +268,8 @@ namespace FINAL_PROJECT_OOP
 
         static void AssignDeliveries()
         {
-            Console.WriteLine("Assigning Deliveries to : " + Worker + "and" + Vehicle );
-            
-            
+            Console.WriteLine("Assigning Deliveries to : ");
+           
         }
 
         static void Sort()
@@ -280,7 +279,11 @@ namespace FINAL_PROJECT_OOP
 
         static void search()
         {
+            Console.WriteLine("ENter the package id: ");
+            int id = int.Parse(Console.ReadLine());
 
+            
+                 
         }
 
         static void runStimulation()

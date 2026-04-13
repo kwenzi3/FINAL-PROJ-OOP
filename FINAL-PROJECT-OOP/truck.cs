@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    public class truck : Vehicle
+    public class Truck : Vehicle
     {
         private double fuelconsump;
 
-        public truck() 
+        public Truck() 
             : base()
         {
             fuelconsump = 0;
         }
 
-        public truck (string n, int id, double spd, double mc, double cl, bool ia, double fc)
+        public Truck (string n, int id, double spd, double mc, double cl, bool ia, double fc)
             : base (n, id, spd, mc, cl, ia)
         {
             if (fuelconsump < 0)
@@ -46,7 +46,10 @@ namespace FINAL_PROJECT_OOP
 
 
 
-        //public override assigndeliveries - not sure about this
+        public override void AssignDelivery(List<Package>packages)
+        {
+            Console.WriteLine("The Truck's handle heavy packages!");
+        }
 
 
 

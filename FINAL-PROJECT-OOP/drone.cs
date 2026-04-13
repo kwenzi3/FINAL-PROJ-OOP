@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    public class drone : Vehicle
+    public class Drone : Vehicle
     {
         private double maxdistance;
         
 
-        public drone()
+        public Drone()
         {
             maxdistance = 0;
         }
 
-        public drone (string n, int id, double spd, double mc, double cl, bool ia, double md)
+        public Drone (string n, int id, double spd, double mc, double cl, bool ia, double md)
             : base (n , id, spd, mc, cl, ia)
         {
             if (md < 0)
@@ -40,7 +40,10 @@ namespace FINAL_PROJECT_OOP
             maxdistance = md;
         }
 
-        //public override assigndeliveries with the lists - yet to do
+        public override void AssignDelivery(List<Package> packages)
+        {
+            Console.WriteLine("The drone's handle small/light packages only!");
+        }
 
         public override double CalculatedEfficiency()
         {

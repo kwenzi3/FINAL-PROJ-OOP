@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    public class van : Vehicle
+    public class Van : Vehicle
     {
         private bool isElectric;
 
 
 
 
-        public van() : base()
+        public Van() : base()
         {
             isElectric = true;
         }
 
-        public van (string n, int id, double spd, double mc, double cl, bool ia, bool ie)
+        public Van (string n, int id, double spd, double mc, double cl, bool ia, bool ie)
             : base (n,id, spd, mc, cl, ia)
         {
             isElectric = ie;
@@ -34,7 +34,11 @@ namespace FINAL_PROJECT_OOP
             isElectric = ie;
         }
 
-        //public override assigndeliveries
+        public override void AssignDelivery(List<Package> packages)
+        {
+           Console.WriteLine("The van's handle medium deiveries!");
+        }
+
 
 
         //public van(string name, bool isElectric)

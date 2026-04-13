@@ -74,8 +74,6 @@ namespace FINAL_PROJECT_OOP
         }
 
 
-        //methods
-
         public void SetCapacity(double capacity)
         {
             if (capacity == 0)
@@ -89,10 +87,20 @@ namespace FINAL_PROJECT_OOP
 
         public virtual double CalculatedEfficiency()
         {
-            return 0;
+            if (speed > 50 )
+            {
+                Console.WriteLine("This Vehicle is efficient!");
+                return speed - currentLoad;
+            }
+
+            else
+            {
+                Console.WriteLine("This vehicle is not efficient");
+                return speed;
+            }
         }
 
-        //public abstract void AssignDeliveries(List<package> packages);
+        public abstract void AssignDelivery(List<Package> packages);
 
         public override void Display()
         {
