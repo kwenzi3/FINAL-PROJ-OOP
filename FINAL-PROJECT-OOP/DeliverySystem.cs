@@ -8,5 +8,30 @@ namespace FINAL_PROJECT_OOP
 {
     internal class DeliverySystem
     {
+        private List<Warehouse> warehouses;
+        private List<Package> allPackages;
+
+        public DeliverySystem()
+        {
+            warehouses = new List<Warehouse>();
+            allPackages = new List<Package>();
+        }
+
+        public DeliverySystem(List<Warehouse> w, List<Package> p)
+        {
+            if (w == null || p == null)
+                throw new InvalidDataException("Warehouses and packages cannot be null.");
+
+            warehouses = new List<Warehouse>(w);
+            allPackages = new List<Package>(p);
+        }
+
+
+
+
+
+
+
+
     }
 }

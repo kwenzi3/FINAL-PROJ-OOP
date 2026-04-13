@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
@@ -21,14 +22,18 @@ namespace FINAL_PROJECT_OOP
             packages = new List<Package>();
         }
 
-        public Warehouse(string n)
+        public Warehouse(string n, List<Worker> w, List<Vehicle> v, List<Package> p)
         {
-            if (string.IsNullOrEmpty(n))
-                throw new InvalidDataException("Warehouse name cannot be null or empty.");
-            name = n;
-            workers = new List<Worker>();
-            vehicles = new List<Vehicle>();
-            packages = new List<Package>();
+            if (n == null || w == null || v == null || p == null)
+            {
+                throw new EmptyStructureException("Warehouse attribute cannot be null or empty.");
+            }
+
+                name = n;
+                workers = new List<Worker>(w);
+                vehicles = new List<Vehicle>(v);
+                packages = new List<Package>(p);
+                
         }
 
         public string GetName() { return name; }
