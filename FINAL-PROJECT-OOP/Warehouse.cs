@@ -11,14 +11,14 @@ namespace FINAL_PROJECT_OOP
         private string name;
         private List<Worker> workers;   
         private List<Vehicle> vehicles;
-        private List<Package> packages;
+        private List<package> packages;
 
         public Warehouse()
         {
             name = string.Empty;
             workers = new List<Worker>();
             vehicles = new List<Vehicle>();
-            packages = new List<Package>();
+            packages = new List<package>();
         }
 
         public Warehouse(string n)
@@ -28,14 +28,14 @@ namespace FINAL_PROJECT_OOP
             name = n;
             workers = new List<Worker>();
             vehicles = new List<Vehicle>();
-            packages = new List<Package>();
+            packages = new List<package>();
         }
 
         public string GetName() { return name; }
         public List<Worker> GetWorkers() { return workers; }
         public List <Vehicle> GetVehicles() { return vehicles; }
         
-        public List<Package> GetPackages() { return packages; }
+        public List<package> GetPackages() { return packages; }
 
         public void SetName(string n)
         {
@@ -45,9 +45,9 @@ namespace FINAL_PROJECT_OOP
         }
         public void SetWorkers(List<Worker> w) { workers = w; }
         public void SetVehicles(List<Vehicle> v) { vehicles = v; }
-        public void SetPackages(List<Package> p) { packages = p; }
+        public void SetPackages(List<package> p) { packages = p; }
 
-        public void AddPackage(Package package)
+        public void AddPackage(package package)
         {
             if(package == null)
                 throw new IndexOutOfRangeException("Package cannot be null.");
@@ -56,7 +56,7 @@ namespace FINAL_PROJECT_OOP
 
         public void RemovePackage(int pacckageId)
         {
-            Package packageToRemove = null;
+            package packageToRemove = null;
 
             foreach (var package in packages)
             {
@@ -118,10 +118,10 @@ namespace FINAL_PROJECT_OOP
             return null;
 
         }
-        public List<Package> getPendingPackages()
+        public List<package> getPendingPackages()
         {
             
-            List<Package> pendingPackages = new List<Package>();
+            List<package> pendingPackages = new List<package>();
             foreach (var package in packages)
             {
                 if (package.GetStatus() == "Pending")
