@@ -9,8 +9,6 @@ namespace FINAL_PROJECT_OOP
 {
 
     internal class Package
-
-
     {
 
         private int id;
@@ -28,13 +26,9 @@ namespace FINAL_PROJECT_OOP
             status = "***";
 
         }
-        //this part needs to be edited
-        //public package(int id, double weight, int priorityLevel)
-        //{
+    
 
-        //}
-
-        public pPckage(int id, double w, int pl, string d, string s)
+        public Package(int id, double w, int pl, string d, string s)
         {
             if (w < 0)
                 throw new InvalidDataException("The wight should not be below 0!");
@@ -45,7 +39,7 @@ namespace FINAL_PROJECT_OOP
             if (string.IsNullOrEmpty(d))
                 throw new InvalidDataException("The destination can't be null or empty!");
 
-            id = id;
+            this.id = id;
             weight = w;
             priorityLevel = pl;
             destination = d;
@@ -61,7 +55,7 @@ namespace FINAL_PROJECT_OOP
         {
             if (id == 0)
                 throw new InvalidDataException("The id should be valid");
-            id = id;
+            this.id = id;
         }
 
         public double getWeight() 
@@ -106,15 +100,17 @@ namespace FINAL_PROJECT_OOP
             status = S; 
         }
 
-        public double CalculatePriorityScore()
+        public double CalculateotyScoreouble ()
         {
-            return //create formula
+            return; //create formula
         }
 
         public void UpdateStatus (string newStatus) //edit this
         {
-            if (***)
+            if (newStatus != "pending" && newStatus != "assigned" && newStatus != "delivery")
                 throw new InvalidDataException("The status can only be --> (pending/assigned/delivery)");
+
+
 
             status = newStatus;
         }

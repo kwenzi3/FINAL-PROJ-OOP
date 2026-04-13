@@ -37,15 +37,15 @@ namespace FINAL_PROJECT_OOP
 
 
 
-            allPackages = new List<package>();
-        }
+        //   allPackages = new List<Package>();
+        //}
 
         public List<Warehouse> GetWarehouses()
         {
             return warehouses;
         }
 
-        public List<package> GetallPackages()
+        public List<Package> GetallPackages()
         {
             return allPackages;
         }

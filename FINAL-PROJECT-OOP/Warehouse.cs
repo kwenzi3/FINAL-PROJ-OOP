@@ -12,14 +12,14 @@ namespace FINAL_PROJECT_OOP
         private string name;
         private List<Worker> workers;   
         private List<Vehicle> vehicles;
-        private List<package> packages;
+        private List<Package> packages;
 
         public Warehouse()
         {
             name = string.Empty;
             workers = new List<Worker>();
             vehicles = new List<Vehicle>();
-            packages = new List<package>();
+            packages = new List<Package>();
         }
 
         public Warehouse(string n, List<Worker> w, List<Vehicle> v, List<Package> p)
@@ -68,13 +68,13 @@ namespace FINAL_PROJECT_OOP
             packages.Add(package);
         }
 
-        public void RemovePackage(int pacckageId)
+        public void RemovePackage(int packageId)
         {
-            package packageToRemove = null;
+            Package packageToRemove = null;
 
             foreach (var package in packages)
             {
-                if (package.GetId() == pacckageId)
+                if (package.getId() == packageId)
                 {
                     packageToRemove = package;
                     break;
@@ -96,10 +96,11 @@ namespace FINAL_PROJECT_OOP
             if (vehicles == null || vehicles.Count == 0)
                 throw new InvalidDataException("Vehicle list cannot be null or empty.");
             Vehicle bestVehicle = null;
-            double bestResult = bestResult.getMaxCapacity() + bestResult.CalculatedEfficiency();
+            double bestResult = double.MinValue;
+
             foreach (var vehicle in vehicles)
             {
-                double result = vehicle.getMaxCapacity() / vehicle.CalculatedEfficiency();
+                double result = vehicle.getMaxCapacity() / vehicle.CalculateEfficency();
                 if (result > bestResult)
                 {
                     bestResult = result;
@@ -138,7 +139,7 @@ namespace FINAL_PROJECT_OOP
             List<Package> pendingPackages = new List<Package>();
             foreach (var package in packages)
             {
-                if (package.GetStatus() == "Pending")
+                if (package.getStatus() == "Pending")
                 { 
                 
                     pendingPackages.Add(package);
