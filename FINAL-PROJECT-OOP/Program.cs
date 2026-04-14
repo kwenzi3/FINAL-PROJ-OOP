@@ -137,12 +137,12 @@ namespace FINAL_PROJECT_OOP
 
 
             }
-        
-
-         static void AddPackage()
 
 
-        {
+            static void AddPackage()
+
+
+            {
                 try
                 {
                     StreamWriter writer = new StreamWriter(FILENAME, true);
@@ -170,6 +170,57 @@ namespace FINAL_PROJECT_OOP
                 {
                     Console.WriteLine($"Error: {ex.Message}");
                 }
+            }
+        }
+
+        static void AddVehicle()
+        {
+            try
+            {
+                StreamWriter writer = new StreamWriter(FILENAME, true);
+
+                Console.WriteLine("Enter the vehicle id: ");
+                string id = Console.ReadLine();
+
+                Console.WriteLine("Enter the vehicle type(Truck/Van/Drone): ");
+                string type = Console.ReadLine();
+
+                Console.WriteLine("Enter the vehicle Capacity: ");
+                string capacity = Console.ReadLine();
+
+                writer.WriteLine($"VEHICLE | V{id} | {type} | {capacity}");
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+
+
+
+        static void AddWorker()
+        {
+            try
+            {
+                StreamWriter writer = new StreamWriter(FILENAME, true);
+
+                Console.WriteLine("Enter the worker id: ");
+                string id = Console.ReadLine();
+
+                Console.WriteLine("Enter the worker role: ");
+                string role = Console.ReadLine();
+
+                Console.WriteLine("Enter the worker Experience: ");
+                string experience = Console.ReadLine();
+
+                writer.WriteLine($"WORKER | W{id} | {role} | {experience}");
+                writer.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
         }
 
 
