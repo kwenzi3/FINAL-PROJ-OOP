@@ -99,15 +99,11 @@ namespace FINAL_PROJECT_OOP
             }
         }
 
-       
-
-
         static void AddVehicle()
-         {
+        {
             try
             {
                 StreamWriter writer = new StreamWriter(FILENAME, true);
-
 
 
                 Console.WriteLine("Enter the vehicle id: ");
@@ -119,112 +115,18 @@ namespace FINAL_PROJECT_OOP
                 Console.WriteLine("Enter the vehicle Capacity: ");
                 string capacity = Console.ReadLine();
             }
-            catch 
+      
+            
+           catch (Exception ex)
             {
+                Console.WriteLine($"Error: {ex.Message}");
             }
-
-        }
-
-        public static void AddTruck()
-
-        {
-            Console.WriteLine("Enter the truck's name : ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("Enter the trucks's id : ");
-            int id = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter the truck's speed : ");
-            double speed = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter the truck's max capacity : ");
-            double mc = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("What's the truck's current load : ");
-            double cl = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Is the truck electric?? : ");
-            bool ie = true;
-
-            Console.WriteLine("Enter the truck's fuel consumption : ");
-            double fuelconsump = double.Parse(Console.ReadLine());
-
-           
-            truck t = new truck(name, fuelconsump);
-
-            Console.WriteLine("Truck has been added!!");
-
-        }
-
-        public static void AddVan()
-
-        {
-            Console.WriteLine("Enter the van's name : ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("Is this van electric? : ");
-            bool isElectric = Console.ReadLine().ToLower() == "yes";
-
-            van v = new van(name, isElectric);
-
-            Console.WriteLine("Van has been added!!");
-
-        }
-
-        public static void AddDrone()
-
-        {
-
-            Console.WriteLine("Enter the drone's name : ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("What is the maximum distance? : ");
-            double maxdistance = double.Parse(Console.ReadLine());
-
-            drone d = new drone(name, maxdistance);
-
-            Console.WriteLine("Drone has been added!!");
         }
 
 
 
-        public static void AddDriver()
 
-        {
-            Console.WriteLine(" Enter the driver's name : ");
-            string name = Console.ReadLine();
-
-              
-                Console.WriteLine("Enter the worker id: ");
-                string id = Console.ReadLine();
-
-                Console.WriteLine("Enter the worker role: ");
-                string role = Console.ReadLine();
-
-                Console.WriteLine("Enter the worker Experience: ");
-                string experience  = Console.ReadLine();
-
-
-
-        public static void AddManager()
-        {
-            Console.WriteLine("Enter the Manager's name : ");
-            string name = Console.ReadLine();
-
-
-
-            Console.WriteLine("What is the team size? : ");
-            int teamsize = Console.ReadLine();
-
-        Console.WriteLine("What is the team size? : ");
-            int teamsize = int.Parse(Console.ReadLine());
-
-
-        Manager m = new Manager(name, teamsize);
-
-        Console.WriteLine("Manager has been added!!");
-
-        }
+        
 
 
 
