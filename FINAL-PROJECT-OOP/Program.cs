@@ -59,9 +59,9 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 4:
-<<<<<<< HEAD
+
                         SearchPackageById();
-=======
+
                         Console.WriteLine("Enter the package ID to search: ");
                         int id = int.Parse(Console.ReadLine());
                         var package = deliverySystem.SearchPackageById(id);
@@ -73,7 +73,7 @@ namespace FINAL_PROJECT_OOP
                         {
                             Console.WriteLine("Package not found.");
                         }
->>>>>>> 1f21d545dc99bce4979400fef9777dc44414e99c
+
                         break;
 
                     case 5:
@@ -89,11 +89,6 @@ namespace FINAL_PROJECT_OOP
                      SaveAndLoad();
                      break;
 
-                    //case 8:
-                    //    Load();
-                    //    break;
-
-
                     default:
                         Console.WriteLine("Please enter your choice! :");
                         break;
@@ -103,11 +98,9 @@ namespace FINAL_PROJECT_OOP
             }
         }
 
-       
 
 
-<<<<<<< HEAD
-        //}
+
 
 
 
@@ -117,7 +110,7 @@ namespace FINAL_PROJECT_OOP
             Console.WriteLine("1. Package");
             Console.WriteLine("2. Vehicle");
             Console.WriteLine("3. Worker");
-         
+
             Console.WriteLine("What is your choice? : ");
             int choice = int.Parse(Console.ReadLine());
             //string choice = Console.ReadLine();
@@ -139,32 +132,13 @@ namespace FINAL_PROJECT_OOP
                 default:
                     Console.WriteLine("Please enter your choice! :");
                     break;
-=======
-        static void AddVehicle()
-         {
-            try
-            {
-                StreamWriter writer = new StreamWriter(FILENAME, true);
 
 
 
-                Console.WriteLine("Enter the vehicle id: ");
-                string id = Console.ReadLine();
-
-                Console.WriteLine("Enter the vehicle type(Truck/Van/Drone): ");
-                string type = Console.ReadLine();
->>>>>>> 1f21d545dc99bce4979400fef9777dc44414e99c
-
-                Console.WriteLine("Enter the vehicle Capacity: ");
-                string capacity = Console.ReadLine();
             }
-            catch 
-            {
-            }
+        
 
-        }
-
-        static void AddPackage()
+         static void AddPackage()
 
         {
             try
@@ -189,109 +163,19 @@ namespace FINAL_PROJECT_OOP
                 writer.WriteLine($"PACKAGE | {weight} | {priorityLevel} | {destination} | {status} ");
                 writer.Close();
 
-<<<<<<< HEAD
+
             }
-=======
-           
-            truck t = new truck(name, fuelconsump);
->>>>>>> 1f21d545dc99bce4979400fef9777dc44414e99c
 
             catch (Exception ex)
             {
                 Console.WriteLine($"Error : {ex.Message}");
             }
 
-            //Package p = new Package();
+                // truck t = new truck(name, fuelconsump);
+                //Package p = new Package();
+                //Console.WriteLine("The Package has been added!!");
 
-            //Console.WriteLine("The Package has been added!!");
-
-        }
-
-<<<<<<< HEAD
-    
-     
-=======
-        public static void AddVan()
-
-        {
-            Console.WriteLine("Enter the van's name : ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("Is this van electric? : ");
-            bool isElectric = Console.ReadLine().ToLower() == "yes";
-
-            van v = new van(name, isElectric);
-
-            Console.WriteLine("Van has been added!!");
-
-        }
-
-        public static void AddDrone()
-
-        {
-
-            Console.WriteLine("Enter the drone's name : ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("What is the maximum distance? : ");
-            double maxdistance = double.Parse(Console.ReadLine());
-
-            drone d = new drone(name, maxdistance);
-
-            Console.WriteLine("Drone has been added!!");
-        }
-
-
-
-        public static void AddDriver()
-
-        {
-            Console.WriteLine(" Enter the driver's name : ");
-            string name = Console.ReadLine();
-
-              
-                Console.WriteLine("Enter the worker id: ");
-                string id = Console.ReadLine();
-
-                Console.WriteLine("Enter the worker role: ");
-                string role = Console.ReadLine();
-
-                Console.WriteLine("Enter the worker Experience: ");
-                string experience  = Console.ReadLine();
-
-
-
-        public static void AddManager()
-        {
-            Console.WriteLine("Enter the Manager's name : ");
-            string name = Console.ReadLine();
-
-
-
-            Console.WriteLine("What is the team size? : ");
-            int teamsize = Console.ReadLine();
-
-        Console.WriteLine("What is the team size? : ");
-            int teamsize = int.Parse(Console.ReadLine());
-
-
-        Manager m = new Manager(name, teamsize);
-
-        Console.WriteLine("Manager has been added!!");
-
-        }
-
-
-
-
->>>>>>> 1f21d545dc99bce4979400fef9777dc44414e99c
-
-       
-
-
-
-
-<<<<<<< HEAD
+            }
         }
 
         static void SearchPackageById()
@@ -304,9 +188,6 @@ namespace FINAL_PROJECT_OOP
         {
 
         }
-=======
-        
->>>>>>> 1f21d545dc99bce4979400fef9777dc44414e99c
 
         static void undo()
         {
