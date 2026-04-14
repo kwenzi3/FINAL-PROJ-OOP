@@ -59,11 +59,12 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 4:
-
-                        SearchPackageById();
+                        //deliverySystem.SearchPackageById();
 
                         Console.WriteLine("Enter the package ID to search: ");
                         int id = int.Parse(Console.ReadLine());
+                        
+
                         var package = deliverySystem.SearchPackageById(id);
                         if (package != null)
                         {
@@ -98,13 +99,6 @@ namespace FINAL_PROJECT_OOP
             }
         }
 
-
-
-
-
-
-
-
         static void EntitiesMenu()
         {
             Console.WriteLine("*****What would you like to add?*****");
@@ -137,39 +131,37 @@ namespace FINAL_PROJECT_OOP
 
 
             }
+        }
+       static void AddPackage()
 
 
-            static void AddPackage()
-
-
+        {
+            try
             {
-                try
-                {
-                    StreamWriter writer = new StreamWriter(FILENAME, true);
+                StreamWriter writer = new StreamWriter(FILENAME, true);
 
-                    Console.WriteLine("Enter the package id : ");
-                    string name = Console.ReadLine();
+                Console.WriteLine("Enter the package id : ");
+                string name = Console.ReadLine();
 
-                    Console.WriteLine("Enter the package weight : ");
-                    string weight = Console.ReadLine();
+                Console.WriteLine("Enter the package weight : ");
+                string weight = Console.ReadLine();
 
-                    Console.WriteLine("Enter the package priority level : ");
-                    string priorityLevel = Console.ReadLine();
+                Console.WriteLine("Enter the package priority level : ");
+                string priorityLevel = Console.ReadLine();
 
-                    Console.WriteLine("What's the package's destination : ");
-                    string destination = Console.ReadLine();
+                Console.WriteLine("What's the package's destination : ");
+                string destination = Console.ReadLine();
 
-                    Console.WriteLine("What is the status of the package? :");
-                    string status = Console.ReadLine();
+                Console.WriteLine("What is the status of the package? :");
+                string status = Console.ReadLine();
 
-                    writer.WriteLine($"PACKAGE | {weight} | {priorityLevel} | {destination} | {status} ");
-                    writer.Close();
+                writer.WriteLine($"PACKAGE | {weight} | {priorityLevel} | {destination} | {status} ");
+                writer.Close();
 
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error: {ex.Message}");
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
             }
         }
 

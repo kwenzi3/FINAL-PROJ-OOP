@@ -123,9 +123,7 @@ namespace FINAL_PROJECT_OOP
 
         public bool IsHeavy()
         {
-<<<<<<< HEAD
-            
-=======
+
              double threshold = 50.0; 
             
             if(weight > threshold)
@@ -136,7 +134,7 @@ namespace FINAL_PROJECT_OOP
             {
                 return false;
             }
->>>>>>> 1f21d545dc99bce4979400fef9777dc44414e99c
+
         }
     }
 }
