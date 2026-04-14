@@ -80,6 +80,8 @@ namespace FINAL_PROJECT_OOP
         {
             if (capacity == 0)
                 throw new InvalidDataException("capacity must be >0");
+
+            maxCapacity = capacity;
         }
 
         public double getRemainingCapacity()
@@ -92,7 +94,7 @@ namespace FINAL_PROJECT_OOP
             return 0;
         }
 
-        //public abstract void AssignDeliveries(List<package> packages);
+        public abstract void AssignDeliveries(List<Package> packages);
 
         public override void Display()
         {

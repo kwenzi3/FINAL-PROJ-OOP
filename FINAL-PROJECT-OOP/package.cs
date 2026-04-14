@@ -110,8 +110,6 @@ namespace FINAL_PROJECT_OOP
         public void UpdateStatus (string newStatus) //edit this
         {
 
-            if (***) 
-
             if (newStatus != "pending" && newStatus != "assigned" && newStatus != "delivery")
 
                 throw new InvalidDataException("The status can only be --> (pending/assigned/delivery)");
