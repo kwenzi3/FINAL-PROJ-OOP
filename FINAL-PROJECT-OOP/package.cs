@@ -117,14 +117,26 @@ namespace FINAL_PROJECT_OOP
                 throw new InvalidDataException("The status can only be --> (pending/assigned/delivery)");
 
 
-
             status = newStatus;
         }
         
 
-        public bool IsHeavy() // edit this
+        public bool IsHeavy()
         {
+<<<<<<< HEAD
             
+=======
+             double threshold = 50.0; 
+            
+            if(weight > threshold)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+>>>>>>> 1f21d545dc99bce4979400fef9777dc44414e99c
         }
     }
 }

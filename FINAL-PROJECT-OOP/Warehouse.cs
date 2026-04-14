@@ -34,14 +34,7 @@ namespace FINAL_PROJECT_OOP
                 workers = new List<Worker>(w);
                 vehicles = new List<Vehicle>(v);
                 packages = new List<Package>(p);
-                
-
-            if (string.IsNullOrEmpty(n))
-                throw new InvalidDataException("Warehouse name cannot be null or empty.");
-            name = n;
-            workers = new List<Worker>();
-            vehicles = new List<Vehicle>();
-            packages = new List<Package>();
+           
 
         }
 
@@ -57,14 +50,32 @@ namespace FINAL_PROJECT_OOP
                 throw new InvalidDataException("Warehouse name cannot be null or empty.");
             name = n;
         }
-        public void SetWorkers(List<Worker> w) { workers = w; }
-        public void SetVehicles(List<Vehicle> v) { vehicles = v; }
-        public void SetPackages(List<Package> p) { packages = p; }
+        public void SetWorkers(List<Worker> w) 
+        {
+            if (w == null)
+                throw new InvalidDataException("Worker list cannot be null.");
+
+            workers = new List<Worker>(w);
+        }
+        public void SetVehicles(List<Vehicle> v)
+        {
+            if (v == null)
+                throw new InvalidDataException("Vehicle list cannot be null.");
+
+            vehicles = new List<Vehicle>(v); 
+        }
+        public void SetPackages(List<Package> p) 
+        {
+            if (p == null)
+                throw new InvalidDataException("Packages list cannot be null.");
+
+            packages = new List<Package>(p);
+        }
 
         public void AddPackage(Package package)
         {
             if(package == null)
-                throw new IndexOutOfRangeException("Package cannot be null.");
+                throw new InvalidDataException("Package cannot be null.");
             packages.Add(package);
         }
 
@@ -91,16 +102,24 @@ namespace FINAL_PROJECT_OOP
             }
 
         }
-        public Vehicle FindBestVehicle(List<Vehicle> vehicles)
+        public Vehicle FindBestVehicle(Package p)
         {
+            if(p == null)
+                throw new InvalidDataException("Package cannot be null.");  
             if (vehicles == null || vehicles.Count == 0)
                 throw new InvalidDataException("Vehicle list cannot be null or empty.");
+
             Vehicle bestVehicle = null;
             double bestResult = double.MinValue;
 
             foreach (var vehicle in vehicles)
             {
-                double result = vehicle.getMaxCapacity() / vehicle.CalculatedEfficiency();
+                if(vehicle.getRemainingCapacity() < p.getWeight() || !vehicle.getisAvailable())
+                {
+                    continue;
+                }
+                double efficiency = vehicle.CalculatedEfficiency();
+                double result = vehicle.getMaxCapacity() / efficiency;
                 if (result > bestResult)
                 {
                     bestResult = result;
@@ -118,7 +137,7 @@ namespace FINAL_PROJECT_OOP
             }
             return bestVehicle;
         }
-        public Worker AssignWorker(List<Worker> workers)
+        public Worker AssignWorker()
         {
             Console.WriteLine("--Available Workers--");
             foreach (var worker in workers)

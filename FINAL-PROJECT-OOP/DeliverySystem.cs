@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    public class DeliverySystem
+    public class DeliverySystem 
     {
         private List<Warehouse> warehouses;
 
@@ -31,7 +31,7 @@ namespace FINAL_PROJECT_OOP
             warehouses = new List<Warehouse>(w);
             allPackages = new List<Package>(p);
         }
-        public void SortPackacgesByStatus()
+        public void SortPackagesById()
         {
 
             for (int i = 0; i < allPackages.Count; i++)
@@ -51,6 +51,7 @@ namespace FINAL_PROJECT_OOP
             }
             
         }
+       
         public void ProcecesDeliveries()
         {
             if(warehouses == null || warehouses.Count == 0)
@@ -60,36 +61,49 @@ namespace FINAL_PROJECT_OOP
             {
                 var pendingPackages = warehouse.getPendingPackages();
                 if (pendingPackages == null || pendingPackages.Count == 0)
-                   continue;
-               
-                var bestVehicle = warehouse.FindBestVehicle(warehouse.GetVehicles());
-                if (bestVehicle == null)
-                    throw new InvalidOperationException($"No available vehicles in warehouse {warehouse.GetName()} to process deliveries.");
 
-                var assignedWorker = warehouse.AssignWorker(warehouse.GetWorkers());
-                if (assignedWorker == null)
-                    throw new InvalidOperationException($"No available workers in warehouse {warehouse.GetName()} to process deliveries.");
-               
-                Console.WriteLine($"Processing deliveries from warehouse {warehouse.GetName()} using vehicle {bestVehicle.getId()} and worker {assignedWorker.getName()}.");
-            }
+                    foreach (var package in pendingPackages)
+                    {
+                        var bestVehicle = warehouse.FindBestVehicle(package);
+                        if (bestVehicle == null)
+                         continue;
 
-            foreach (var package in allPackages)
-            {
-                if (package.getStatus() == "Pending")
-                {
-                    package.setStatus("In Transit");
+                        var worker = warehouse.AssignWorker();
+                        if (worker == null)
+                          continue;
+
+                        bestVehicle.setCurrentLoad(bestVehicle.getCurrentLoad() + package.getWeight());
+                        bestVehicle.setisAvailable(false);
+
+                        package.setStatus("In Transit");  
+                        
+                        Console.WriteLine($"Package ID: {package.getId()} is assigned to Vehicle {bestVehicle.getId()} delivered by " +
+                            $"worker {worker.getId()} ");
+
+                    }
+
                     
-                }
             }
+
+    
 
         }
         public void SimulateDay()
         {
-            Console.WriteLine("Simulating a day in the delivery system");    
-            ProcecesDeliveries();
+
+            Console.WriteLine("Simulating a day in the delivery system");
+            try
+            {
+                ProcecesDeliveries();
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error during simulation: " + e.Message);
+
+            }
             Console.WriteLine("Day simulation completed.");
-
-
         }   
 
         public List<Warehouse> GetWarehouses()
@@ -97,9 +111,12 @@ namespace FINAL_PROJECT_OOP
             return warehouses;
         }
 
-        public void SetWarehouses(List<Warehouse> warehouses)
+        public void SetWarehouses(List<Warehouse> wh)
         {
-            warehouses = warehouses.ToList();
+            if (wh == null)
+                throw new InvalidDataException("Warehouses list cannot be null.");
+
+            warehouses = new List<Warehouse>(wh);
         }
 
 
@@ -109,9 +126,12 @@ namespace FINAL_PROJECT_OOP
             return allPackages;
         }
 
-        public void SetallPackages(List<Package> allPackages)
+        public void SetallPackages(List<Package> ap)
         {
-            allPackages = allPackages.ToList();
+            if (ap == null)
+                throw new InvalidDataException("Packages list cannot be null."); 
+
+             allPackages = new List<Package>(ap);
         }
 
         public void AddWarehouse(Warehouse w)
@@ -140,8 +160,7 @@ namespace FINAL_PROJECT_OOP
             return null;
         }
 
-
-
+        
     }
 }
 
