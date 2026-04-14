@@ -99,16 +99,13 @@ namespace FINAL_PROJECT_OOP
             }
         }
 
-       
-
-
         static void AddVehicle()
-         {
+        {
             try
             {
                 StreamWriter writer = new StreamWriter(FILENAME, true);
 
-        
+
 
                 Console.WriteLine("Enter the vehicle id: ");
                 string id = Console.ReadLine();
@@ -126,15 +123,17 @@ namespace FINAL_PROJECT_OOP
             {
                 Console.WriteLine($"Error: {ex.Message}");
             }
-         }
-        
+        }
+
+
+
         static void AddWorker()
         {
             try
             {
                 StreamWriter writer = new StreamWriter(FILENAME, true);
 
-              
+
                 Console.WriteLine("Enter the worker id: ");
                 string id = Console.ReadLine();
 
@@ -142,7 +141,7 @@ namespace FINAL_PROJECT_OOP
                 string role = Console.ReadLine();
 
                 Console.WriteLine("Enter the worker Experience: ");
-                string experience  = Console.ReadLine();
+                string experience = Console.ReadLine();
 
                 writer.WriteLine($"WORKER | W{id} | {role} | {experience}");
                 writer.Close();
@@ -152,7 +151,9 @@ namespace FINAL_PROJECT_OOP
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
-         
+
+
+
 
 
         static void undo()
