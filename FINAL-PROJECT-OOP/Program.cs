@@ -57,11 +57,11 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 4:
-                        search();
+                        SearchPackageById();
                         break;
 
                     case 5:
-                        runStimulation();
+                        deliverySystem.SimulateDay();
                         break;
 
                     case 6:
@@ -99,13 +99,10 @@ namespace FINAL_PROJECT_OOP
         static void EntitiesMenu()
         {
             Console.WriteLine("*****What would you like to add?*****");
-            Console.WriteLine("1. Truck");
-            Console.WriteLine("2. Van");
-            Console.WriteLine("3. Drone");
-            Console.WriteLine("4. Driver");
-            Console.WriteLine("5. Manager");
-            Console.WriteLine("6. Loader");
-
+            Console.WriteLine("1. Package");
+            Console.WriteLine("2. Vehicle");
+            Console.WriteLine("3. Worker");
+         
             Console.WriteLine("What is your choice? : ");
             int choice = int.Parse(Console.ReadLine());
             //string choice = Console.ReadLine();
@@ -113,27 +110,15 @@ namespace FINAL_PROJECT_OOP
             switch (choice)
             {
                 case 1:
-                    AddTruck();
+                    AddPackage();
                     break;
 
                 case 2:
-                    AddVan();
+                    AddVehicle();
                     break;
 
                 case 3:
-                    AddDrone();
-                    break;
-
-                case 4:
-                    AddDriver();
-                    break;
-
-                case 5:
-                    AddManager();
-                    break;
-
-                case 6:
-                    AddLoader();
+                    AddWorker();
                     break;
 
                 default:
@@ -145,120 +130,48 @@ namespace FINAL_PROJECT_OOP
 
         }
 
-        public static void AddTruck()
+        static void AddPackage()
 
         {
-            Console.WriteLine("Enter the truck's name : ");
-            string name = Console.ReadLine();
+            try
+            {
+                StreamWriter writer = new StreamWriter(FILENAME, true);
 
-            Console.WriteLine("Enter the trucks's id : ");
-            int id = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the package id : ");
+                string name = Console.ReadLine();
 
-            Console.WriteLine("Enter the truck's speed : ");
-            double speed = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the package weight : ");
+                string weight = Console.ReadLine();
 
-            Console.WriteLine("Enter the truck's max capacity : ");
-            double mc = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the package priority level : ");
+                string priorityLevel = Console.ReadLine();
 
-            Console.WriteLine("What's the truck's current load : ");
-            double cl = double.Parse(Console.ReadLine());
+                Console.WriteLine("What's the package's destination : ");
+                string destination = Console.ReadLine();
 
-            Console.WriteLine("Is the truck electric?? : ");
-            bool ie = true;
+                Console.WriteLine("What is the status of the package? :");
+                string status = Console.ReadLine();
 
-            Console.WriteLine("Enter the truck's fuel consumption : ");
-            double fuelconsump = double.Parse(Console.ReadLine());
+                writer.WriteLine($"PACKAGE | {weight} | {priorityLevel} | {destination} | {status} ");
+                writer.Close();
 
-           
-            Truck t = new Truck(name, fuelconsump);
+            }
 
-            Console.WriteLine("Truck has been added!!");
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error : {ex.Message}");
+            }
+
+            //Package p = new Package();
+
+            //Console.WriteLine("The Package has been added!!");
 
         }
 
-        public static void AddVan()
+    
+     
 
-        {
-            Console.WriteLine("Enter the van's name : ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("Is this van electric? : ");
-            bool isElectric = Console.ReadLine().ToLower() == "yes";
-
-            Van v = new Van(name, isElectric);
-
-            Console.WriteLine("Van has been added!!");
-
-        }
-
-        public static void AddDrone()
-
-        {
-
-            Console.WriteLine("Enter the drone's name : ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("What is the maximum distance? : ");
-            double maxdistance = double.Parse(Console.ReadLine());
-
-            Drone d = new Drone(name, maxdistance);
-
-            Console.WriteLine("Drone has been added!!");
-        }
-
-
-
-        public static void AddDriver()
-
-        {
-            Console.WriteLine(" Enter the driver's name : ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("What is the liscence type? : ");
-            string liscensetype = Console.ReadLine();
-
-            Driver d = new Driver(name, liscensetype);
-
-            Console.WriteLine("Driver has been added!!");
-
-        }
-
-
-
-        public static void AddManager()
-        {
-            Console.WriteLine("Enter the Manager's name : ");
-            string name = Console.ReadLine();
-
-             Console.WriteLine("What is the team size? : ");
-            int teamsize = int.Parse(Console.ReadLine());
-
-
-        Manager m = new Manager(name, teamsize);
-
-        Console.WriteLine("Manager has been added!!");
-
-        }
-
-
-
-
-        public static void AddLoader()
-        {
-            Console.WriteLine("Enter the Loader's name : ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("What is the Maximum Liftable weight? : ");
-            double maxliftweight=double.Parse(Console.ReadLine());
-
-
-            Loader l = new Loader(name, maxliftweight);
-
-            Console.WriteLine("Loader has been added!!");
-
-
-        }
-
+       
 
 
         static void AssignDeliveries()
@@ -272,12 +185,9 @@ namespace FINAL_PROJECT_OOP
 
         }
 
-        static void search()
+        static void SearchPackageById()
         {
-            Console.WriteLine("ENter the package id: ");
-            int id = int.Parse(Console.ReadLine());
-
-            
+           
                  
         }
 
@@ -293,7 +203,7 @@ namespace FINAL_PROJECT_OOP
 
         static void SaveAndLoad()
         {
-            
+           
         }
     }
 

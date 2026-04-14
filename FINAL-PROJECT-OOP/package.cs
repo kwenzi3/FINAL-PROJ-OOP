@@ -41,7 +41,7 @@ namespace FINAL_PROJECT_OOP
             if (string.IsNullOrEmpty(d))
                 throw new InvalidDataException("The destination can't be null or empty!");
 
-            this.id = id;
+            id = id;
             weight = w;
             priorityLevel = pl;
             destination = d;
@@ -99,18 +99,18 @@ namespace FINAL_PROJECT_OOP
 
         public void setStatus(string S)  // CHECK THIS AGAIN PLEASE
         {
-            status = S; 
+            if (S == null)
+                throw new InvalidDataException("The status can't be null");
+            status = S;
         }
 
         public double CalculatePriorityScore ()
         {
-            return; //create formula
+            return priorityLevel - (weight * 0.1);
         }
 
         public void UpdateStatus (string newStatus) //edit this
         {
-
-            if (***) 
 
             if (newStatus != "pending" && newStatus != "assigned" && newStatus != "delivery")
 
@@ -124,7 +124,7 @@ namespace FINAL_PROJECT_OOP
 
         public bool IsHeavy() // edit this
         {
-               
+            
         }
     }
 }
