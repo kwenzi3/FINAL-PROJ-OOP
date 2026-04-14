@@ -59,6 +59,9 @@ namespace FINAL_PROJECT_OOP
                         break;
 
                     case 4:
+
+                        SearchPackageById();
+
                         Console.WriteLine("Enter the package ID to search: ");
                         int id = int.Parse(Console.ReadLine());
                         var package = deliverySystem.SearchPackageById(id);
@@ -70,6 +73,7 @@ namespace FINAL_PROJECT_OOP
                         {
                             Console.WriteLine("Package not found.");
                         }
+
                         break;
 
                     case 5:
@@ -85,11 +89,6 @@ namespace FINAL_PROJECT_OOP
                      SaveAndLoad();
                      break;
 
-                    //case 8:
-                    //    Load();
-                    //    break;
-
-
                     default:
                         Console.WriteLine("Please enter your choice! :");
                         break;
@@ -99,44 +98,81 @@ namespace FINAL_PROJECT_OOP
             }
         }
 
-        static void AddVehicle()
+
+
+
+
+
+
+
+        static void EntitiesMenu()
         {
-            try
+            Console.WriteLine("*****What would you like to add?*****");
+            Console.WriteLine("1. Package");
+            Console.WriteLine("2. Vehicle");
+            Console.WriteLine("3. Worker");
+
+            Console.WriteLine("What is your choice? : ");
+            int choice = int.Parse(Console.ReadLine());
+            //string choice = Console.ReadLine();
+
+            switch (choice)
             {
-                StreamWriter writer = new StreamWriter(FILENAME, true);
+                case 1:
+                    AddPackage();
+                    break;
+
+                case 2:
+                    AddVehicle();
+                    break;
+
+                case 3:
+                    AddWorker();
+                    break;
+
+                default:
+                    Console.WriteLine("Please enter your choice! :");
+                    break;
 
 
-                Console.WriteLine("Enter the vehicle id: ");
-                string id = Console.ReadLine();
 
-                Console.WriteLine("Enter the vehicle type(Truck/Van/Drone): ");
-                string type = Console.ReadLine();
-
-                Console.WriteLine("Enter the vehicle Capacity: ");
-                string capacity = Console.ReadLine();
             }
-      
-            
-           catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
+        
+
+         static void AddPackage()
+
+
+        {
+                try
+                {
+                    StreamWriter writer = new StreamWriter(FILENAME, true);
+
+                    Console.WriteLine("Enter the package id : ");
+                    string name = Console.ReadLine();
+
+                    Console.WriteLine("Enter the package weight : ");
+                    string weight = Console.ReadLine();
+
+                    Console.WriteLine("Enter the package priority level : ");
+                    string priorityLevel = Console.ReadLine();
+
+                    Console.WriteLine("What's the package's destination : ");
+                    string destination = Console.ReadLine();
+
+                    Console.WriteLine("What is the status of the package? :");
+                    string status = Console.ReadLine();
+
+                    writer.WriteLine($"PACKAGE | {weight} | {priorityLevel} | {destination} | {status} ");
+                    writer.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
         }
 
 
-
-
-        
-
-
-
-
-
-
-
-
-
-        
 
         static void undo()
         {
@@ -145,7 +181,7 @@ namespace FINAL_PROJECT_OOP
 
         static void SaveAndLoad()
         {
-            
+           
         }
     }
 
