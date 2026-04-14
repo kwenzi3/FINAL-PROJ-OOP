@@ -50,9 +50,27 @@ namespace FINAL_PROJECT_OOP
                 throw new InvalidDataException("Warehouse name cannot be null or empty.");
             name = n;
         }
-        public void SetWorkers(List<Worker> w) { workers = new List<Worker>(w); }
-        public void SetVehicles(List<Vehicle> v) { vehicles = new List<Vehicle>(v); }
-        public void SetPackages(List<Package> p) { packages = new List<Package>(p); }
+        public void SetWorkers(List<Worker> w) 
+        {
+            if (w == null)
+                throw new InvalidDataException("Worker list cannot be null.");
+
+            workers = new List<Worker>(w);
+        }
+        public void SetVehicles(List<Vehicle> v)
+        {
+            if (v == null)
+                throw new InvalidDataException("Vehicle list cannot be null.");
+
+            vehicles = new List<Vehicle>(v); 
+        }
+        public void SetPackages(List<Package> p) 
+        {
+            if (p == null)
+                throw new InvalidDataException("Packages list cannot be null.");
+
+            packages = new List<Package>(p);
+        }
 
         public void AddPackage(Package package)
         {

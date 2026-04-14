@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    public class DeliverySystem
+    public class DeliverySystem 
     {
         private List<Warehouse> warehouses;
 
@@ -31,7 +31,7 @@ namespace FINAL_PROJECT_OOP
             warehouses = new List<Warehouse>(w);
             allPackages = new List<Package>(p);
         }
-        public void SortPackacgesByStatus()
+        public void SortPackagesById()
         {
 
             for (int i = 0; i < allPackages.Count; i++)
@@ -51,6 +51,7 @@ namespace FINAL_PROJECT_OOP
             }
             
         }
+       
         public void ProcecesDeliveries()
         {
             if(warehouses == null || warehouses.Count == 0)
@@ -64,18 +65,17 @@ namespace FINAL_PROJECT_OOP
                     foreach (var package in pendingPackages)
                     {
                         var bestVehicle = warehouse.FindBestVehicle(package);
-                        if (bestVehicle != null)
+                        if (bestVehicle == null)
                          continue;
 
                         var worker = warehouse.AssignWorker();
-                        if (worker != null)
+                        if (worker == null)
                           continue;
 
-                        bestVehicle.setCurrentLoad(bestVehicle.getCurrentLoad() + package.getWeight()); 
-
+                        bestVehicle.setCurrentLoad(bestVehicle.getCurrentLoad() + package.getWeight());
                         bestVehicle.setisAvailable(false);
 
-                        package.setStatus("In Transir");  
+                        package.setStatus("In Transit");  
                         
                         Console.WriteLine($"Package ID: {package.getId()} is assigned to Vehicle {bestVehicle.getId()} delivered by " +
                             $"worker {worker.getId()} ");
@@ -95,6 +95,7 @@ namespace FINAL_PROJECT_OOP
             try
             {
                 ProcecesDeliveries();
+
 
             }
             catch (Exception e)
@@ -159,8 +160,7 @@ namespace FINAL_PROJECT_OOP
             return null;
         }
 
-
-
+        
     }
 }
 
