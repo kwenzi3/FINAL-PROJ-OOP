@@ -230,12 +230,7 @@ namespace FINAL_PROJECT_OOP
             Console.WriteLine("Enter the Manager's name : ");
             string name = Console.ReadLine();
 
-
-
-            Console.WriteLine("What is the team size? : ");
-            int teamsize = Console.ReadLine();
-
-        Console.WriteLine("What is the team size? : ");
+             Console.WriteLine("What is the team size? : ");
             int teamsize = int.Parse(Console.ReadLine());
 
 
