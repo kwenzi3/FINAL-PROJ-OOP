@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace FINAL_PROJECT_OOP
 {
-    public class CustomQueue<T>
+    public class CustomQueue<T> : IQuequeable<T>
     {
         private T[] Qaaray;
         private int count;
 
         public CustomQueue(int capacity)
         {
-            if (count <= 0) 
+            if (capacity <= 0) 
                 throw new EmptyStructureException("Capacity must be greater than zero.");
 
             Qaaray = new T[capacity];
@@ -56,18 +56,7 @@ namespace FINAL_PROJECT_OOP
         {
             return count == 0;
         }
-         public bool IsEmpty(T item)
-         {
-            if(Qaaray.Length == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-         }
+         
 
 
 
