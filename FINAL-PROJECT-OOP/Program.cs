@@ -108,7 +108,7 @@ namespace FINAL_PROJECT_OOP
             {
                 StreamWriter writer = new StreamWriter(FILENAME, true);
 
-        
+
 
                 Console.WriteLine("Enter the vehicle id: ");
                 string id = Console.ReadLine();
@@ -118,6 +118,10 @@ namespace FINAL_PROJECT_OOP
 
                 Console.WriteLine("Enter the vehicle Capacity: ");
                 string capacity = Console.ReadLine();
+            }
+            catch 
+            {
+            }
 
         }
 
